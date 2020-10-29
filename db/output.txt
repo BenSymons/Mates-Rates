@@ -1,0 +1,46 @@
+DROP DATABASE
+CREATE DATABASE
+You are now connected to database "mates_rates" as user "matthewcompton".
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+INSERT 0 7
+INSERT 0 6
+INSERT 0 3
+INSERT 0 3
+ city_id | city_name  
+---------+------------
+       1 | Manchester
+       2 | Liverpool
+       3 | Leeds
+       4 | Newcastle
+       5 | Sheffield
+       6 | York
+       7 | Leicester
+(7 rows)
+
+ restaurant_id | restaurant_name  |  cuisine   | rating | city_id 
+---------------+------------------+------------+--------+---------
+             1 | Yard and Coop    | Chicken    |        |       1
+             2 | Nandos           | Portuguese |        |       2
+             3 | Slug and Lettuce | Pub Grub   |        |       4
+             4 | Turtle Bay       | Carribbean |        |       1
+             5 | Peck and Yard    | Asian      |        |       1
+             6 | Feast India      | Indian     |        |       7
+(6 rows)
+
+ user_id | user_name |     avatar_url     
+---------+-----------+--------------------
+       1 | Matt      | https://aphoto.com
+       2 | Ben       | https://photos.com
+       3 | Hayden    | https://photo.com
+(3 rows)
+
+ comment_id |       comment_body        | rating | user_id | restaurant_id 
+------------+---------------------------+--------+---------+---------------
+          1 | Banging                   |     10 |       1 |             1
+          2 | Great carribbean flavours |      8 |       2 |             4
+          3 | Unbelievable Jeff         |      9 |       3 |             6
+(3 rows)
+
