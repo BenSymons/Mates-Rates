@@ -9,7 +9,11 @@ const cities = [
 ]
 
 const restaurants = [
-    {id: "1", name: "Turtle_bay", cuisine: "Carribean"}
+    {id: "1", name: "Turtle_bay", cuisine: "Carribean", cityId: "1"},
+    {id: "2", name: "Nandos", cuisine: "Portuguese", cityId: "2"},
+    {id: "3", name: "Yard and Coop", cuisine: "Chicken", cityId: "1"},
+    {id: "4", name: "Slug and Lettuce", cuisine: "Burgers", cityId: "3"},
+    {id: "5", name: "McDonalds", cuisine: "American", cityId: "4"}
 ]
 
 const {
@@ -20,7 +24,7 @@ const {
 } = graphql
 
 const CityType = new GraphQLObjectType({
-    name: "city",
+    name: "City",
     fields: () => ({
         id: {type: GraphQLString},
         name: {type: GraphQLString},
@@ -33,6 +37,12 @@ const RestaurantType = new GraphQLObjectType({
         restaurant_id: {type: GraphQLID},
         name: {type: GraphQLString},
         cuisine: {type: GraphQLString},
+        city: {
+            type: CityType, 
+            resolve(parent, args) {
+                return _.find(cities, { id: parent.cityId});
+            }
+        }
     })
 })
 
